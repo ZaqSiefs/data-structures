@@ -1,9 +1,9 @@
-# Data Structure
+# Overview
 
-### What is a Data Structure?
+## What is a Data Structure?
 a data structure is a way of organizing data so that it can be used effectively.
 
-### Why Data Structures?
+## Why Data Structures?
 
 They are essential ingredients in creating fast and powerful algorithms.
 
@@ -11,7 +11,33 @@ They halp to  manage and organize data.
 
 They make code cleaner and easier to understand.
 
-## Abstract Data Type
+# Classifications
+
+![Data Structure Tree](/img/Data%20Structure%20Tree.jpeg)
+
+## Linear Data Structure
+
+Data structure in which data elements are arranged sequentially or linearly, where each element is attatched to its previous and next adjacent elements.
+
+### Static data structure
+
+Has a fixed memory size. It is easier to access the elements.
+
+**example**: ```array```
+
+### Dynamic data structure
+
+size is not fixed. Can be randomly updated during the runtime which may be considered efficient concerning the memory (space) complexity of the code.
+
+**examples**: ```queue```, ```stack```, ```linked-list```
+
+## Non-linear Data Structure
+
+Data elements are not placed sequentially or linearly. Cannot traverse all the elements in a single run only.
+
+**examples**: ```Tree```, ```Graph```
+
+### Abstract Data Type
 
 An abstract data type (ADT) is an abstraction of a data structure which provides only the interface to which a data structure must adhere to.
 
@@ -158,57 +184,3 @@ While i < 3 * n Do
 | Finding all permutations of a string                    | O(n!)      |
 | Sorting using mergesort                                 | O(nlog(n)) |
 | Iterating over all the cells in a matrix of size n by m | O(nm)      |
-
-# Static and Dynamic Arrays
-
-## Complexity
-
-|           | **Static Array** | **Dynamic Array** |
-|-----------|------------------|-------------------|
-| Access    | O(1)             | O(1)              |
-| Search    | O(n)             | O(n)              |
-| Insertion | N/A              | O(n)              |
-| Appending | N/A              | O(1)              |
-| Deletion  | N/A              | O(n)              |
-
-## Static Array
-
-A static array is a fixed length container containing n elements indexable(can be referenced with a number) from the range [0, n-1].
-
-Contiguous chunks of memory, with all memory addresses being adjacent to eachother
-
-### When are they used?
-
-1. Storing and accessing sequential data
-2. Temporarily storing objects
-3. used by IO routines as buffers
-4. Lookup tables and inverse lookup tables
-5. Can be used to return multiple values from a function
-6. Used in dynamic programming to cache answers to subproblems
-
-### Structure
-
-| A =       | 44 | 12 | -5 | 17 | 6 | 0 | 3 | 9 | 100 |
-|-----------|----|----|----|----|---|---|---|---|-----|
-| (index) = | 0  | 1  | 2  | 3  | 4 | 5 | 6 | 7 | 8   |
-
-Elements in *A* are referenced by their index. There is no other way to access elements in an array.  Array indexing is zero-based, meaning the first element is found in position zero.
-
-## Dynamic Arrays
-
-They can grow and shrink in size.
-
-|   Methods   | Array | [0] | [1] | [2] | [3] |
-|:-----------:|:-----:|:---:|:---:|:---:|:---:|
-|             |  A =  |  34 |  4  |     |     |
-|  A.add(-7)  |  A =  |  34 |  4  |  -7 |     |
-|  A.add(34)  |  A =  |  34 |  4  |  -7 |  34 |
-| A.remove(4) |  A =  |  34 |  -7 |  34 |     |
-
-### How to implement
-
-Could use a static array
-
-1. Create a static array with an initial capacity.
-2. Add elements to the underlying static array, keeping track of the number of elements.
-3. If adding another element will exceed the capacity, then create a new static array with twice the capacity and copy the original elements into it.

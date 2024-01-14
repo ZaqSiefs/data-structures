@@ -1,34 +1,34 @@
 #include <iostream>
-#include <array>
 
-template<typename T, size_t S>
-class Array 
+#include "Array.h"
+#include "Vector.h"
+
+template<typename T>
+void PrintVector(const Vector<T>& vector)
 {
-public:
-    constexpr size_t Size() const { return S; }
+    for (size_t i = 0; i < vector.Size(); i++)
+        std::cout << vector[i] << '\n';
 
-    T& operator[](size_t index) { return m_Data[index]; }
-    const T& operator[](size_t index) const { return m_Data[index]; }
-
-    T* Data() { return m_Data; }
-    const T* Data() const { return m_Data; }
-
-private:
-    T m_Data[S];
-};
+    std::cout << "------------------------------\n";
+}
 
 int main()
 {
-    int size = 5;
-    Array<int, 5> data;
+    Array<std::string, 2> data;
+    data[0] = "Zaq";
+    data [1] = "C++";
 
-    memset(&data[0], 0, data.Size() * sizeof(int));
+    Vector<std::string> vector;
+    vector.PushBack("Zaq");
+    vector.PushBack("C++");
+    vector.PushBack("Vector");
+    vector.PushBack("Vector");
+    vector.PushBack("Vector");
+    vector.PushBack("Vector");
+    vector.PushBack("Vector");
+    vector.PushBack("Vector");
 
-    data[1] = 5;
-    data[4] = 8;
+    PrintVector(vector);
 
-    for (size_t i = 0; i < data.Size(); i++)
-    {
-        std::cout << data[i] << '\n';
-    }
+    std::cin.get();
 }
