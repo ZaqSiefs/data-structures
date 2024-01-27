@@ -1,7 +1,10 @@
 # Overview
 
 ## What is a Data Structure?
-a data structure is a way of organizing data so that it can be used effectively.
+a data structure is a way of storing and organizing data so that it can be used effectively.
+
+1. Mathematical/Logical models or Abstract data types
+
 
 ## Why Data Structures?
 
